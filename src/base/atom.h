@@ -12,15 +12,15 @@ class atom
     double mass;
 
     public:
-    atom();
+    atom( const std::string& = "" );
     ~atom();
 
-    // Temporary function to fill in properties
-    void setProperties( const int&, const std::string&, const std::string&, const double& );
-
-    double getMass();
-    std::string getSymbol();
+    int getNumber();
     std::string getName();
+    std::string getSymbol();
+    double getMass();
+
+    void report();
 
     friend std::ostream& operator<<( std::ostream&, const atom& );
 };

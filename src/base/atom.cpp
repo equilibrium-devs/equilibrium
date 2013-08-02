@@ -1,22 +1,53 @@
 #include "atom.h"
 
-atom::atom() : number( 1 ), name( "Hydrogen" ), symbol( "H" ), mass( 1.00794 )
-{}
+atom::atom( const std::string& inSymbol ) : number( -1 ), name( "Undefined" ), symbol( "X" ), mass( 0.0 )
+// Temporary constructor for setting up a CHNO system quickly
+{
+    if ( inSymbol == "H" ) {
+        number = 1;
+        name = "Hydrogen";
+        symbol = "H";
+        mass = 1.00794;
+        return;
+    }
+
+    if ( inSymbol == "C" ) {
+        number = 6;
+        name = "Carbon";
+        symbol = "C";
+        mass = 12.0107;
+        return;
+    }
+
+    if ( inSymbol == "N" ) {
+        number = 7;
+        name = "Nitrogen";
+        symbol = "N";
+        mass = 14.0067;
+        return;
+    }
+
+    if ( inSymbol == "O" ) {
+        number = 8;
+        name = "Oxygen";
+        symbol = "O";
+        mass = 15.9994;
+        return;
+    }
+}
+
 
 atom::~atom()
 {}
 
-void atom::setProperties( const int& inNumber, const std::string& inName, const std::string& inSymbol, const double& inMass )
+int atom::getNumber()
 {
-    number = inNumber;
-    name = inName;
-    symbol = inSymbol;
-    mass = inMass;
+    return number;
 }
 
-double atom::getMass()
+std::string atom::getName()
 {
-    return mass;
+    return name;
 }
 
 std::string atom::getSymbol()
@@ -24,9 +55,17 @@ std::string atom::getSymbol()
     return symbol;
 }
 
-std::string atom::getName()
+double atom::getMass()
 {
-    return name;
+    return mass;
+}
+
+void atom::report()
+{
+    std::cout << "Element Name: " << name << std::endl;
+    std::cout << "Element Symbol: " << symbol << std::endl;
+    std::cout << "Element Number: " << number << std::endl;
+    std::cout << "Element Mass: " << mass << std::endl;
 }
 
 std::ostream& operator<<( std::ostream& output, const atom& element )

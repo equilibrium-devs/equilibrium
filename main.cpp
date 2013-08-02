@@ -2,12 +2,12 @@
 
 int main( int argc, char** argv )
 {
-    atom myatom;
-    std::cout << myatom << std::endl;
+    atom* myatom = new atom;
+    std::cout << *myatom << std::endl;
+    delete myatom;
 
-    myatom.setProperties( 2, "Helium", "He", 4.002602 );
-    std::cout << myatom << std::endl;
-    myatom.setProperties( 3, "Lithium", "Li", 6.941 );
-    std::cout << myatom << std::endl;
+    myatom = new atom( "C" );
+    myatom->report();
+    delete myatom;
 }
 
