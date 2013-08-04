@@ -36,31 +36,30 @@ atom::atom( const std::string& inSymbol ) : number( -1 ), name( "Undefined" ), s
     }
 }
 
-
 atom::~atom()
 {}
 
-int atom::getNumber()
+int atom::getNumber() const
 {
     return number;
 }
 
-std::string atom::getName()
+std::string atom::getName() const
 {
     return name;
 }
 
-std::string atom::getSymbol()
+std::string atom::getSymbol() const
 {
     return symbol;
 }
 
-double atom::getMass()
+double atom::getMass() const
 {
     return mass;
 }
 
-void atom::report()
+void atom::report() const
 {
     std::cout << "Element Name: " << name << std::endl;
     std::cout << "Element Symbol: " << symbol << std::endl;

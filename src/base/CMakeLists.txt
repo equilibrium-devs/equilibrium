@@ -1,6 +1,9 @@
 cmake_minimum_required( VERSION 2.8 )
 
-set( BASE_SOURCES atom.cpp )
+set( CMAKE_CXX_FLAGS "-g -Wall -std=c++11" )
 
-add_library( base "${BASE_SOURCES}" )
+#set( BASE_SOURCES atom.cpp molecule.cpp )
+#add_library( base "${BASE_SOURCES}" )
+
+add_library( base atom.cpp molecule.cpp )
 

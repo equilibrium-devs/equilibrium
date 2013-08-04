@@ -15,12 +15,12 @@ class atom
     atom( const std::string& = "" );
     ~atom();
 
-    int getNumber();
-    std::string getName();
-    std::string getSymbol();
-    double getMass();
+    int getNumber() const;
+    std::string getName() const;
+    std::string getSymbol() const;
+    double getMass() const;
 
-    void report();
+    void report() const;
 
     friend std::ostream& operator<<( std::ostream&, const atom& );
 };
