@@ -10,5 +10,5 @@ set( LIBRARIES base )
 include_directories( base )
 
 add_executable( equilibrium "${SOURCES}" )
-target_link_libraries( equilibrium "${LIBARIES}" )
+target_link_libraries( equilibrium "${LIBRARIES}" )
 
