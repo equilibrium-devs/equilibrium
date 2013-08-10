@@ -37,7 +37,7 @@ molecule::molecule( const std::string& inFormula )
         auto count = 0;
         std::stringstream( countString ) >> count;
         if ( not count ) count = 1;
-        addAtom( Symbol, count );
+        addElement( Symbol, count );
         // Start fresh
         Symbol = partSymbol;
         countString = "";
@@ -46,7 +46,7 @@ molecule::molecule( const std::string& inFormula )
     auto count = 0;
     std::stringstream( countString ) >> count;
     if ( not count ) count = 1;
-    addAtom( Symbol, count );
+    addElement( Symbol, count );
 }
 
 molecule::~molecule()
@@ -55,12 +55,12 @@ molecule::~molecule()
     std::for_each( elements.begin(), elements.end(), std::default_delete<atom>() );
 }
 
-void molecule::addAtom( const std::string& inSymbol )
+void molecule::addElement( const std::string& inSymbol )
 {
     elements.push_back( new atom( inSymbol ) );
 }
 
-void molecule::addAtom( const std::string& inSymbol, const unsigned& inCount )
+void molecule::addElement( const std::string& inSymbol, const unsigned& inCount )
 {
     for ( unsigned count = 0; count < inCount; ++count ) {
         elements.push_back( new atom( inSymbol ) );

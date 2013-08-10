@@ -26,10 +26,10 @@ int main( int argc, char** argv )
     std::cout << std::endl;
 
     molecule ethanol;
-    ethanol.addAtom( "C", 2 );
-    ethanol.addAtom( "H", 5 );
-    ethanol.addAtom( "O" );
-    ethanol.addAtom( "H" );
+    ethanol.addElement( "C", 2 );
+    ethanol.addElement( "H", 5 );
+    ethanol.addElement( "O" );
+    ethanol.addElement( "H" );
     ethanol.report();
 }
 

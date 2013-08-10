@@ -16,8 +16,8 @@ class molecule
     molecule( const std::string& );
     ~molecule();
 
-    void addAtom( const std::string& );
-    void addAtom( const std::string&, const unsigned& );
+    void addElement( const std::string& );
+    void addElement( const std::string&, const unsigned& );
     std::string getFormula() const;
     double getMass() const;
 
