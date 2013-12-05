@@ -41,7 +41,7 @@ int main( int argc, char** argv )
     std::cout << std::endl;
 
     mixture reactants;
-    reactants.add( "O2", 0.21);
+    reactants.add( "O2", 0.21 );
     reactants.add( "N2", 0.79 );
     reactants.add( "CH4", 0.2 );
     reactants.report();
@@ -49,8 +49,10 @@ int main( int argc, char** argv )
     std::cout << std::endl;
 
     mixture products( "CO2", 0.4 );
-    products.add( "H2O", 0.5);
+    products.add( "H2O", 0.5 );
 
     std::cout << products << std::endl;
+
+    return 0;
 }
 
